@@ -4,7 +4,28 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calculator</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        #main {
+            width: 500px;
+            margin: 100px auto;
+            border: 2px solid black;
+        }
+        #wrapper #main .screen, #wrapper #main .screen {
+            padding: 20px;
+            border: 1px solid black;
+        }
+        table{
+            margin: 0 auto;
+        }
+        table td {
+            border: 1px solid;
+            padding: 36px 40px;
+        }
+        table td:hover {
+            background-color: black;
+            color:white;
+        }
+    </style>
 </head>
 <body>
     <div id="wrapper">
@@ -43,14 +64,10 @@
             </div>
         </div>
     </div>
-    
     <script>
         var temp;
         var opt;
         var z;
-
-        //getting the input values 
-
         function operate(id) {
             if(opt != undefined && opt != " "){
                 if (z == undefined || z == " "){
@@ -80,7 +97,6 @@
 
         function calc(id){
             if( opt != undefined && opt != " "){
-                opt = id;
                 if( opt == "add"){
                     temp = parseInt(temp) + parseInt(z);
                     document.getElementById("demo").innerHTML = temp;
@@ -98,6 +114,7 @@
                     document.getElementById("demo").innerHTML = temp;
                 }
                 z = " ";
+                opt = id;
             } else {
                 opt = id;
             }
